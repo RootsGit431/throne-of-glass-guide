@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Throne of Glass — A Spoiler-Free Companion Guide</title>
+<meta name="description" content="Reading order, interactive maps, characters and a personal progress tracker for Sarah J. Maas's Throne of Glass series — completely spoiler-free.">
+<meta name="theme-color" content="#13594c">
+<meta property="og:title" content="Throne of Glass — A Spoiler-Free Companion Guide">
+<meta property="og:description" content="Reading order, maps, characters and a personal reading tracker for the Throne of Glass series.">
+<meta property="og:image" content="maps/erilea-illustrated.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2313594c'/%3E%3Ctext x='50' y='71' font-size='62' text-anchor='middle' fill='%23faf8f3' font-family='Georgia,serif'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f3; --card:#ffffff; --ink:#211e18; --ink-soft:#6a6357;
+    --ink-faint:#938b7c; --accent:#13594c; --accent-dk:#0d4035;
+    --accent-soft:#e4ede9; --gold:#a07d2c; --gold-soft:#f3ecd9;
+    --crimson:#8a3a32; --line:#e6e1d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,Segoe UI,sans-serif;
+    color:var(--ink);background:var(--bg);font-size:17px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:var(--accent);}
+  img{max-width:100%;}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(250,248,243,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav-in{
+    max-width:1060px;margin:0 auto;display:flex;align-items:center;
+    gap:8px;padding:11px 20px;
+  }
+  .nav-logo{
+    font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;
+    color:var(--ink);white-space:nowrap;margin-right:auto;
+  }
+  .nav-logo span{color:var(--accent);font-style:italic;}
+  .nav-links{display:flex;gap:4px;align-items:center;}
+  nav a{
+    font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;
+    padding:8px 11px;border-radius:8px;white-space:nowrap;transition:.15s;
+  }
+  nav a:hover{background:var(--accent-soft);color:var(--accent-dk);}
+  nav a.active{background:var(--accent);color:#fff;}
+  .nav-toggle{
+    display:none;width:42px;height:42px;border:1px solid var(--line);
+    background:var(--card);border-radius:10px;cursor:pointer;
+    align-items:center;justify-content:center;flex-direction:column;gap:4px;
+  }
+  .nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px;}
+  section{scroll-margin-top:66px;}
+
+  /* ---------- import banner ---------- */
+  .import-banner{
+    background:var(--accent-soft);border-bottom:1px solid #cfe0da;
+    padding:13px 22px;display:flex;align-items:center;gap:12px;
+    flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--accent-dk);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;text-align:center;overflow:hidden;border-bottom:1px solid var(--line);}
+  .hero-bg{
+    position:absolute;inset:0;
+    background:url("maps/erilea-illustrated.jpg") center 32% / cover no-repeat;
+  }
+  .hero-veil{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(250,248,243,.80) 0%,
+      rgba(250,248,243,.74) 42%,rgba(250,248,243,.93) 82%,var(--bg) 100%);
+  }
+  .hero-in{position:relative;padding:74px 22px 66px;max-width:780px;margin:0 auto;}
+  .eyebrow{
+    font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:18px;
+  }
+  h1.title{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(50px,11vw,104px);line-height:.98;letter-spacing:-.01em;
+  }
+  h1.title .of{font-style:italic;font-weight:400;color:var(--accent);}
+  .hero-sub{font-size:18px;color:var(--ink-soft);margin-top:18px;}
+  .hero-pill{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    background:var(--card);border:1px solid var(--line);border-radius:30px;
+    padding:8px 18px;font-size:13px;font-weight:500;color:var(--accent-dk);
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+  .btn{
+    font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+    text-decoration:none;padding:13px 24px;border-radius:11px;
+    border:1px solid var(--accent);cursor:pointer;transition:.15s;display:inline-block;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dk);}
+  .btn-ghost{background:transparent;color:var(--accent);}
+  .btn-ghost:hover{background:var(--accent-soft);}
+
+  /* ---------- section heads ---------- */
+  .sec{padding:70px 0;}
+  .sec + .sec{border-top:1px solid var(--line);}
+  .sec-head{max-width:680px;margin:0 auto 38px;text-align:center;}
+  .sub-head{max-width:680px;margin:48px auto 26px;text-align:center;}
+  .kicker{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(33px,5vw,46px);line-height:1.08;letter-spacing:-.01em;
+  }
+  .sub-head h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;}
+  .sec-head p,.sub-head p{color:var(--ink-soft);margin-top:9px;font-size:16px;}
+
+  /* ---------- spoiler promise ---------- */
+  .promise{
+    max-width:780px;margin:0 auto;background:var(--accent-soft);
+    border:1px solid #cfe0da;border-radius:16px;padding:22px 26px;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .promise .ic{
+    flex:none;width:42px;height:42px;border-radius:11px;background:var(--accent);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:22px;font-family:'Cormorant Garamond',serif;font-weight:700;
+  }
+  .promise h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;}
+  .promise p{font-size:15px;color:var(--ink-soft);margin-top:3px;}
+
+  /* ---------- tabs ---------- */
+  .tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+  .tab{
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);color:var(--ink-soft);
+    padding:10px 18px;border-radius:30px;transition:.15s;
+  }
+  .tab:hover{border-color:var(--accent);color:var(--accent);}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .tab-note{
+    text-align:center;max-width:620px;margin:14px auto 28px;
+    font-size:15px;font-style:italic;color:var(--ink-soft);
+  }
+  .panel{display:none;}
+  .panel.active{display:block;}
+
+  /* ---------- book cards ---------- */
+  .book{
+    display:flex;gap:20px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:22px 24px;margin-bottom:13px;transition:.15s;
+  }
+  .book:hover{border-color:var(--accent);}
+  .b-num{
+    flex:none;width:48px;height:48px;border-radius:13px;background:var(--accent-soft);
+    color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:25px;
+    font-weight:600;display:flex;align-items:center;justify-content:center;
+  }
+  .book h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.15;}
+  .b-meta{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin:3px 0 7px;
+  }
+  .book p{color:var(--ink-soft);font-size:15px;line-height:1.6;}
+
+  .olist{counter-reset:ol;max-width:620px;margin:0 auto;}
+  .oitem{
+    display:flex;gap:14px;align-items:baseline;padding:15px 18px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;
+  }
+  .oitem::before{
+    counter-increment:ol;content:counter(ol);
+    font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;
+    color:var(--accent);flex:none;width:22px;text-align:center;
+  }
+  .oitem .ot{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;}
+  .oitem .od{margin-left:auto;font-size:12px;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;}
+
+  /* ---------- tandem callout ---------- */
+  .tandem-call{
+    background:var(--gold-soft);border:1px solid #e6d6a8;border-radius:15px;
+    padding:24px;margin-bottom:13px;
+  }
+  .tc-top{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+  .tc-badge{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    color:#fff;background:var(--gold);padding:6px 14px;border-radius:20px;
+  }
+  .tc-top .tcn{font-size:13px;color:var(--gold);font-weight:600;}
+  .pair{display:flex;gap:13px;align-items:stretch;flex-wrap:wrap;}
+  .pbk{
+    flex:1;min-width:200px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;
+  }
+  .pbk h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;}
+  .swap{display:flex;align-items:center;justify-content:center;
+    font-size:26px;color:var(--gold);font-weight:700;}
+  .tc-note{font-size:15px;color:var(--ink-soft);margin-top:14px;line-height:1.6;}
+  .tc-note a{font-weight:600;}
+
+  /* ---------- tandem section ---------- */
+  .lead{max-width:720px;margin:0 auto 26px;text-align:center;font-size:17px;color:var(--ink-soft);}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:13px;max-width:840px;margin:0 auto 30px;
+  }
+  .why{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 20px;}
+  .why h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .why p{font-size:14px;color:var(--ink-soft);line-height:1.55;}
+
+  .tandem-box{max-width:760px;margin:0 auto;}
+  .tandem-bar{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:var(--card);border:1px solid var(--line);border-radius:13px;
+    padding:15px 18px;margin-bottom:13px;
+  }
+  .tandem-bar .tprog{font-size:14px;color:var(--ink-soft);}
+  .tandem-bar .tprog b{color:var(--accent);font-weight:600;}
+  .tandem-reader{font-size:13px;color:var(--ink-faint);width:100%;}
+  .tandem-reader b{color:var(--gold);font-weight:600;}
+  .mini-btn{
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;
+    background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+    padding:9px 14px;border-radius:9px;transition:.15s;
+  }
+  .mini-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .mini-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .mini-btn.primary:hover{background:var(--accent-dk);color:#fff;}
+  #tandemList{display:none;margin-top:4px;}
+  #tandemList.open{display:block;}
+  .tstep{
+    display:flex;align-items:center;gap:13px;padding:11px 15px;
+    background:var(--card);border:1px solid var(--line);border-radius:11px;
+    margin-bottom:7px;cursor:pointer;transition:.12s;
+  }
+  .tstep:hover{border-color:var(--accent);}
+  .tstep .ts-n{font-size:12px;color:var(--ink-faint);width:22px;flex:none;font-weight:600;}
+  .tbox{
+    flex:none;width:22px;height:22px;border-radius:7px;border:1.5px solid #cdc7b8;
+    display:flex;align-items:center;justify-content:center;font-size:13px;
+    color:transparent;transition:.12s;
+  }
+  .tstep.done .tbox{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .tpill{
+    flex:none;font-size:10px;font-weight:600;letter-spacing:.04em;
+    text-transform:uppercase;padding:4px 9px;border-radius:6px;white-space:nowrap;
+  }
+  .tpill.eos{background:var(--accent-soft);color:var(--accent-dk);}
+  .tpill.tod{background:var(--gold-soft);color:var(--gold);}
+  .tstep .ts-label{font-size:14px;}
+  .tstep.done .ts-label{color:var(--ink-faint);text-decoration:line-through;}
+
+  /* ---------- maps ---------- */
+  .map-stage{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    overflow:hidden;max-width:940px;margin:0 auto;
+  }
+  .map-switch{
+    display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+    padding:16px;border-bottom:1px solid var(--line);background:var(--bg);
+  }
+  .map-stage > img{display:block;width:100%;cursor:zoom-in;background:var(--accent-soft);}
+  .map-cap{text-align:center;padding:14px 20px;font-size:14px;color:var(--ink-soft);}
+  .map-cap b{color:var(--ink);font-weight:600;}
+  .map-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;max-width:940px;margin:0 auto;
+  }
+  .map-card{background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;}
+  .map-card img{display:block;width:100%;cursor:zoom-in;background:var(--accent-soft);aspect-ratio:1/1;object-fit:cover;}
+  .map-card .mc-body{padding:15px 18px;}
+  .map-card h4{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;}
+  .map-card p{font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.5;}
+  .zoom-hint{font-size:12px;color:var(--ink-faint);text-align:center;margin-top:18px;}
+
+  .lb{display:none;position:fixed;inset:0;z-index:100;
+    background:rgba(20,18,14,.94);padding:24px;}
+  .lb.open{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .lb img{max-width:100%;max-height:82vh;border-radius:8px;object-fit:contain;}
+  .lb-cap{color:#f3ecd9;font-size:14px;margin-top:14px;text-align:center;
+    font-family:'Cormorant Garamond',serif;letter-spacing:.04em;}
+  .lb-close{
+    position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.14);color:#fff;border:none;font-size:23px;cursor:pointer;line-height:1;
+  }
+  .lb-close:hover{background:rgba(255,255,255,.28);}
+
+  /* ---------- grids ---------- */
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:16px;max-width:980px;margin:0 auto;
+  }
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px 24px;}
+  .tile .tag{
+    display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--gold);background:var(--gold-soft);
+    padding:4px 11px;border-radius:7px;margin-bottom:11px;
+  }
+  .tile h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.15;}
+  .tile p{font-size:14px;color:var(--ink-soft);margin-top:7px;line-height:1.6;}
+  .char .c-top{display:flex;align-items:center;gap:14px;margin-bottom:11px;}
+  .c-av{
+    flex:none;width:50px;height:50px;border-radius:50%;background:var(--accent-soft);
+    color:var(--accent);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;
+  }
+  .char h3{font-size:22px;}
+  .char .role{font-size:12px;color:var(--gold);font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;}
+
+  /* ---------- glossary ---------- */
+  .gloss{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:13px;max-width:980px;margin:0 auto;
+  }
+  .gterm{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;border-left:3px solid var(--accent);}
+  .gterm dt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--accent-dk);}
+  .gterm dd{font-size:14px;color:var(--ink-soft);margin-top:3px;line-height:1.55;}
+
+  /* ---------- tracker ---------- */
+  .tracker{max-width:720px;margin:0 auto;}
+  .profile-card{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:18px 22px;margin-bottom:14px;
+  }
+  .pc-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .pc-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;}
+  .profile-select{
+    font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--ink);
+    background:var(--bg);border:1px solid var(--line);border-radius:10px;
+    padding:8px 36px 8px 14px;cursor:pointer;appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2313594c' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 13px center;
+  }
+  .pc-actions{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap;}
+  .profile-form{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .profile-form input{
+    flex:1;min-width:160px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);
+    border:1px solid var(--line);border-radius:9px;padding:10px 13px;background:var(--bg);
+  }
+  .profile-form input:focus{outline:2px solid var(--accent-soft);border-color:var(--accent);}
+  [hidden]{display:none!important;}
+
+  .tk-head{background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:20px 24px;margin-bottom:14px;}
+  .bar{height:11px;background:var(--accent-soft);border-radius:6px;overflow:hidden;}
+  .bar-fill{height:100%;width:0;background:var(--accent);border-radius:6px;transition:width .3s ease;}
+  .tk-stat{display:flex;justify-content:space-between;margin-top:9px;font-size:13px;color:var(--ink-soft);}
+  .tk-stat b{color:var(--accent);font-weight:600;}
+  .tk-row{
+    display:flex;align-items:center;gap:14px;padding:15px 20px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    margin-bottom:8px;cursor:pointer;transition:.12s;
+  }
+  .tk-row:hover{border-color:var(--accent);}
+  .tk-row .tk-i{font-size:13px;color:var(--ink-faint);font-weight:600;width:18px;flex:none;}
+  .tk-box{
+    flex:none;width:26px;height:26px;border-radius:8px;border:1.5px solid #cdc7b8;
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+    color:transparent;transition:.12s;
+  }
+  .tk-row.done .tk-box{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .tk-row .tk-t{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;}
+  .tk-row.done .tk-t{color:var(--ink-faint);text-decoration:line-through;}
+  .tk-row .tk-tag{margin-left:auto;font-size:11px;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;}
+  .tk-done-msg{
+    display:none;text-align:center;margin-top:16px;padding:16px;
+    background:var(--gold-soft);border:1px solid #e6d6a8;border-radius:12px;
+    font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold);
+  }
+  .share-card{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:20px 24px;margin-top:14px;
+  }
+  .share-top{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between;}
+  .share-card h4{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;}
+  .share-card p{font-size:13px;color:var(--ink-soft);margin-top:2px;max-width:380px;}
+  .share-link{
+    width:100%;margin-top:13px;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:9px;padding:10px 13px;background:var(--bg);
+  }
+  .share-msg{margin-top:10px;font-size:13px;color:var(--accent);font-weight:500;}
+
+  /* ---------- acotar ---------- */
+  .acotar{background:#0f1626;color:#e7e3d6;border-top:1px solid var(--line);}
+  .acotar .sec-head h2{color:#f0d9a4;}
+  .acotar .kicker{color:#c9a86a;}
+  .acotar .sec-head p{color:#9aa0b2;}
+  .ac-note{max-width:740px;margin:0 auto 34px;background:#161f33;
+    border:1px solid #2a3550;border-radius:15px;padding:22px 26px;}
+  .ac-note h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#f0d9a4;margin-bottom:6px;}
+  .ac-note p{font-size:15px;color:#aab0c2;line-height:1.65;}
+  .ac-note p + p{margin-top:10px;}
+  .ac-cols{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;max-width:940px;margin:0 auto;align-items:start;}
+  .ac-order{background:#161f33;border:1px solid #2a3550;border-radius:15px;padding:22px 24px;}
+  .ac-order h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#f0d9a4;margin-bottom:4px;}
+  .ac-order .ac-sub{font-size:13px;color:#8b91a4;margin-bottom:14px;}
+  .ac-bk{display:flex;gap:13px;align-items:baseline;padding:11px 0;border-bottom:1px solid #232d45;}
+  .ac-bk:last-of-type{border-bottom:none;}
+  .ac-bk .ac-n{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#c9a86a;width:20px;flex:none;}
+  .ac-bk .ac-t{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#e7e3d6;}
+  .ac-bk .ac-y{margin-left:auto;font-size:12px;color:#8b91a4;}
+  .ac-upcoming{font-size:13px;color:#8b91a4;margin-top:13px;font-style:italic;}
+  .ac-maps{display:flex;flex-direction:column;gap:16px;}
+  .ac-map{background:#161f33;border:1px solid #2a3550;border-radius:14px;overflow:hidden;}
+  .ac-map img{display:block;width:100%;cursor:zoom-in;background:#0c1322;}
+  .ac-map .acm-b{padding:13px 16px;}
+  .ac-map h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#f0d9a4;}
+  .ac-map p{font-size:12px;color:#9aa0b2;margin-top:2px;line-height:1.5;}
+
+  /* ---------- footer ---------- */
+  footer{background:#0a1019;color:#8b91a4;text-align:center;padding:46px 22px;font-size:13px;line-height:1.7;}
+  footer .f-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:#e7e3d6;font-weight:600;margin-bottom:8px;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:2px;
+      background:var(--bg);border-bottom:1px solid var(--line);
+      padding:10px 14px 16px;box-shadow:0 14px 24px rgba(0,0,0,.07);
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:13px 14px;font-size:15px;}
+  }
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .sec{padding:50px 0;}
+    .hero-in{padding:54px 18px 48px;}
+    .ac-cols{grid-template-columns:1fr;}
+    .book{padding:18px;gap:14px;}
+    .book h3{font-size:22px;}
+    .swap{transform:rotate(90deg);}
+    .pc-actions{margin-left:0;width:100%;}
+    .pc-actions .mini-btn{flex:1;}
+    .lb{padding:12px;}
+    .lb-close{top:8px;right:10px;}
+    .tstep{flex-wrap:wrap;}
+    .tstep .ts-label{flex-basis:100%;padding-left:35px;margin-top:-2px;}
+    .share-top{flex-direction:column;align-items:flex-start;}
+    .share-card p{max-width:none;}
+  }
+  @media print{
+    nav,.nav-toggle,.hero-btns,.lb,.mini-btn,.tab,.import-banner,
+    .profile-card,.share-card,.tandem-bar{display:none!important;}
+    body{background:#fff;font-size:12px;}
+    #tandemList,.panel{display:block!important;}
+    .sec{padding:22px 0;page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <div class="nav-in">
+    <div class="nav-logo">Throne <span>of</span> Glass</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#start">Start here</a>
+      <a href="#tandem">Tandem read</a>
+      <a href="#maps">Maps</a>
+      <a href="#world">The world</a>
+      <a href="#characters">Characters</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#tracker">Tracker</a>
+      <a href="#acotar">ACOTAR</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== IMPORT BANNER ===================== -->
+<div class="import-banner" id="importBanner" hidden>
+  <span id="importText"></span>
+  <button class="mini-btn primary" id="importAdd">Add to my readers</button>
+  <button class="mini-btn" id="importDismiss">Dismiss</button>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-in">
+    <div class="eyebrow">A Sarah J. Maas reading companion</div>
+    <h1 class="title">Throne <span class="of">of</span> Glass</h1>
+    <p class="hero-sub">An illustrated, spoiler-free guide for Audrey &amp; friends — how to read the
+      series, where everything is, and who's who, with none of the surprises ruined.</p>
+    <div class="hero-pill"><span class="dot"></span> Completely spoiler-free</div>
+    <div class="hero-btns">
+      <a href="#start" class="btn btn-primary">Start the reading guide</a>
+      <a href="#maps" class="btn btn-ghost">Explore the maps</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== START HERE ===================== -->
+<section class="sec" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Where to begin</div>
+      <h2>The reading path</h2>
+      <p>Eight volumes, three ways to read them. New to the series? Take the recommended path —
+        it's the one this whole guide is built around.</p>
+    </div>
+
+    <div class="promise" style="margin-bottom:38px;">
+      <div class="ic">&#10003;</div>
+      <div>
+        <h3>How this guide stays spoiler-free</h3>
+        <p>Everything here is safe once you've started Book One. Character and world entries only
+          describe what's revealed early on — we never hint at who anyone becomes or how things turn
+          out. Tip: avoid searching character names online; even the wiki spoils fast.</p>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="rec">Recommended</button>
+      <button class="tab" data-tab="chrono">Chronological</button>
+      <button class="tab" data-tab="pub">Publication</button>
+    </div>
+
+    <div class="panel active" data-panel="rec">
+      <p class="tab-note">Our pick. You fall for the characters first, then their backstory hits
+        harder — and you read the two parallel books the clever way.</p>
+
+      <div class="book"><div class="b-num">1</div><div>
+        <h3>Throne of Glass</h3><div class="b-meta">Book One &middot; Start here</div>
+        <p>Dragged from a death-camp and handed one impossible shot at freedom: survive a deadly
+          competition inside the King's glass castle. This is where everything begins.</p></div></div>
+
+      <div class="book"><div class="b-num">2</div><div>
+        <h3>Crown of Midnight</h3><div class="b-meta">Book Two</div>
+        <p>The contest is behind her — but the most dangerous game now is trust. Loyalties tighten
+          and long-buried secrets begin to stir.</p></div></div>
+
+      <div class="book"><div class="b-num">3</div><div>
+        <h3>The Assassin's Blade</h3><div class="b-meta">Prequel &middot; Five novellas</div>
+        <p>Five short tales set before Book One — the missions, friendships and hard choices that
+          shaped our heroine. Sarah J. Maas herself suggests reading them right here, once you
+          already love the characters.</p></div></div>
+
+      <div class="book"><div class="b-num">4</div><div>
+        <h3>Heir of Fire</h3><div class="b-meta">Book Three</div>
+        <p>The story breaks far beyond the castle walls, as the wider world — and much older
+          powers — come into view.</p></div></div>
+
+      <div class="book"><div class="b-num">5</div><div>
+        <h3>Queen of Shadows</h3><div class="b-meta">Book Four</div>
+        <p>Long-laid plans finally collide. Debts come due, and the board is swept clean.</p></div></div>
+
+      <div class="tandem-call">
+        <div class="tc-top">
+          <span class="tc-badge">&#9776; Read these two together</span>
+          <span class="tcn">Steps 6 &amp; 7</span>
+        </div>
+        <div class="pair">
+          <div class="pbk"><h3>Empire of Storms</h3><div class="b-meta">Book Five of the novels</div></div>
+          <div class="swap">&#8646;</div>
+          <div class="pbk"><h3>Tower of Dawn</h3><div class="b-meta">Book Six of the novels</div></div>
+        </div>
+        <p class="tc-note">These two books happen at the <em>exact same time</em>, in different
+          lands, following different people. Reading them braided together keeps the timeline in
+          sync and avoids a brutal cliffhanger. <a href="#tandem">See the chapter-by-chapter tandem
+          order &rarr;</a></p>
+      </div>
+
+      <div class="book"><div class="b-num">8</div><div>
+        <h3>Kingdom of Ash</h3><div class="b-meta">Book Seven &middot; The finale</div>
+        <p>Every thread the series has spun is pulled tight for one last reckoning. The end.</p></div></div>
+    </div>
+
+    <div class="panel" data-panel="chrono">
+      <p class="tab-note">The strict story timeline — the prequel first. Great for purists, though
+        it opens the series on a character you don't know yet.</p>
+      <div class="olist">
+        <div class="oitem"><span class="ot">The Assassin's Blade</span><span class="od">Prequel</span></div>
+        <div class="oitem"><span class="ot">Throne of Glass</span><span class="od">Book One</span></div>
+        <div class="oitem"><span class="ot">Crown of Midnight</span><span class="od">Book Two</span></div>
+        <div class="oitem"><span class="ot">Heir of Fire</span><span class="od">Book Three</span></div>
+        <div class="oitem"><span class="ot">Queen of Shadows</span><span class="od">Book Four</span></div>
+        <div class="oitem"><span class="ot">Empire of Storms</span><span class="od">Book Five</span></div>
+        <div class="oitem"><span class="ot">Tower of Dawn</span><span class="od">Book Six</span></div>
+        <div class="oitem"><span class="ot">Kingdom of Ash</span><span class="od">Book Seven</span></div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="pub">
+      <p class="tab-note">The order the books were released, year by year.</p>
+      <div class="olist">
+        <div class="oitem"><span class="ot">Throne of Glass</span><span class="od">2012</span></div>
+        <div class="oitem"><span class="ot">Crown of Midnight</span><span class="od">2013</span></div>
+        <div class="oitem"><span class="ot">Heir of Fire</span><span class="od">2014</span></div>
+        <div class="oitem"><span class="ot">The Assassin's Blade</span><span class="od">2014</span></div>
+        <div class="oitem"><span class="ot">Queen of Shadows</span><span class="od">2015</span></div>
+        <div class="oitem"><span class="ot">Empire of Storms</span><span class="od">2016</span></div>
+        <div class="oitem"><span class="ot">Tower of Dawn</span><span class="od">2017</span></div>
+        <div class="oitem"><span class="ot">Kingdom of Ash</span><span class="od">2018</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TANDEM READ ===================== -->
+<section class="sec" id="tandem">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The tricky part</div>
+      <h2>The tandem read</h2>
+      <p>Empire of Storms and Tower of Dawn unfold side by side. Here's how to weave them together.</p>
+    </div>
+
+    <p class="lead">A &ldquo;tandem read&rdquo; simply means reading both books at once, switching
+      back and forth at planned points. The events happen concurrently in different places, so
+      this keeps the whole story in step — and it's honestly more fun.</p>
+
+    <div class="why-grid">
+      <div class="why"><h4>Why bother?</h4>
+        <p>Empire of Storms ends on a huge cliffhanger. Tower of Dawn then follows a different cast
+          elsewhere. Braiding them keeps the momentum and the timeline intact.</p></div>
+      <div class="why"><h4>Don't skip Tower of Dawn</h4>
+        <p>It looks like a side-quest. It isn't. It sets up characters and stakes you'll badly want
+          in place before the finale.</p></div>
+      <div class="why"><h4>How to hold your place</h4>
+        <p>Use two bookmarks — one parked in each book — or sticky tabs at every switch point.
+          Switching then takes seconds.</p></div>
+    </div>
+
+    <div class="tandem-box">
+      <div class="tandem-bar">
+        <button class="mini-btn" id="tandemToggle">Show the full chapter order</button>
+        <span class="tprog"><b id="tandemCount">0</b> of 50 switches checked off</span>
+        <button class="mini-btn" id="tandemReset" style="margin-left:auto;">Reset</button>
+        <span class="tandem-reader">Tracking for <b id="tandemReader">your reader</b> — change in the <a href="#tracker">tracker</a>.</span>
+      </div>
+      <div id="tandemList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAPS ===================== -->
+<section class="sec" id="maps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The world on paper</div>
+      <h2>Maps of Erilea</h2>
+      <p>The continent the whole story unfolds across. Switch between four artists' takes, or
+        tap any map to see it full-size.</p>
+    </div>
+
+    <div class="map-stage">
+      <div class="map-switch">
+        <button class="tab active" data-map="maps/erilea-illustrated.jpg"
+          data-cap="<b>Erilea</b> &mdash; a richly illustrated rendering of every realm">Illustrated</button>
+        <button class="tab" data-map="maps/erilea-parchment.webp"
+          data-cap="<b>Erilea</b> &mdash; a finely detailed hand-drawn parchment chart">Parchment</button>
+        <button class="tab" data-map="maps/erilea-atlas.webp"
+          data-cap="<b>Erilea</b> &mdash; an atlas-style view with shaded relief">Atlas</button>
+        <button class="tab" data-map="maps/erilea-relief.jpg"
+          data-cap="<b>Erilea</b> &mdash; a natural relief view showing the lay of the land">Relief</button>
+      </div>
+      <img id="mainMap" src="maps/erilea-illustrated.jpg" alt="Map of the continent of Erilea">
+      <div class="map-cap" id="mainMapCap"><b>Erilea</b> &mdash; a richly illustrated rendering of every realm</div>
+    </div>
+
+    <div class="sub-head">
+      <h3>The wider world</h3>
+      <p>Beyond Erilea lie the lands across the seas — drawn here in one matching style.</p>
+    </div>
+    <div class="map-grid">
+      <div class="map-card">
+        <img src="maps/world-overview.webp" alt="Erilea and the Southern Continent" loading="lazy">
+        <div class="mc-body"><h4>The known world</h4>
+          <p>Erilea and the Southern Continent together, across the Great Ocean and the Narrow Sea.</p></div>
+      </div>
+      <div class="map-card">
+        <img src="maps/southern-continent.webp" alt="The Southern Continent" loading="lazy">
+        <div class="mc-body"><h4>The Southern Continent</h4>
+          <p>The vast land to the south, home of the great city of Antica. Its story grows later on.</p></div>
+      </div>
+      <div class="map-card">
+        <img src="maps/wendlyn.jpg" alt="Map of Wendlyn" loading="lazy">
+        <div class="mc-body"><h4>Wendlyn — Land of the Fae</h4>
+          <p>The island kingdom across the Great Ocean, ringed by reefs and mist.</p></div>
+      </div>
+      <div class="map-card">
+        <img src="maps/wendlyn-detail.webp" alt="Doranelle and the eastern reefs" loading="lazy">
+        <div class="mc-body"><h4>Doranelle &amp; the Eastern Reefs</h4>
+          <p>A closer look at Wendlyn's deep forests and the ancient city of Doranelle.</p></div>
+      </div>
+    </div>
+    <p class="zoom-hint">Tip: tap any map to open it full-screen.</p>
+  </div>
+</section>
+
+<!-- ===================== THE WORLD ===================== -->
+<section class="sec" id="world">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Kingdoms &amp; realms</div>
+      <h2>The world of Erilea</h2>
+      <p>The ancient Oakwald forest splits the continent into eastern and western lands. Here are
+        the places you'll hear about most — all safe to read before Book One.</p>
+    </div>
+    <div class="grid">
+      <div class="tile"><span class="tag">The empire</span><h3>Adarlan</h3>
+        <p>The conquering power, and the setting of Book One. Its capital, Rifthold, sits on the
+          Avery River and is crowned by the King's Glass Castle.</p></div>
+      <div class="tile"><span class="tag">Conquered kingdom</span><h3>Terrasen</h3>
+        <p>A northern kingdom once celebrated for its deep ties to magic. Its capital is Orynth;
+          its second city, Perranth.</p></div>
+      <div class="tile"><span class="tag">Conquered kingdom</span><h3>Eyllwe</h3>
+        <p>A southern kingdom under Adarlan's rule, home to Princess Nehemia and her people.</p></div>
+      <div class="tile"><span class="tag">Conquered lands</span><h3>Fenharrow &amp; Melisande</h3>
+        <p>Neighbouring southern realms of plains and farmland, also brought under the King's control.</p></div>
+      <div class="tile"><span class="tag">Wild lands</span><h3>The Witch Kingdom &amp; Western Wastes</h3>
+        <p>The harsh western reaches of Erilea — home to ancient, feared clans of witches.</p></div>
+      <div class="tile"><span class="tag">Across the Great Ocean</span><h3>Wendlyn</h3>
+        <p>An island kingdom to the east, untouched by Adarlan's conquest. A land of the Fae,
+          ringed by reefs and mists.</p></div>
+      <div class="tile"><span class="tag">Far to the south</span><h3>The Southern Continent</h3>
+        <p>A vast land across the southern sea, with the great city of Antica at its heart. Its
+          importance grows later on.</p></div>
+      <div class="tile"><span class="tag">Ancient heart of Erilea</span><h3>Oakwald Forest</h3>
+        <p>The immense, age-old forest running down the spine of the continent, dividing the
+          eastern and western lands.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CHARACTERS ===================== -->
+<section class="sec" id="characters">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Who's who</div>
+      <h2>The people you'll meet</h2>
+      <p>Just enough to keep names straight in Book One — nothing about who they become. Many more
+        join the story as you go.</p>
+    </div>
+    <div class="grid">
+      <div class="tile char"><div class="c-top"><div class="c-av">CS</div>
+        <div><h3>Celaena Sardothien</h3><div class="role">The assassin</div></div></div>
+        <p>Erilea's most feared assassin, captured and condemned to the Endovier salt mines.
+          Eighteen, orphaned at eight, and originally from Terrasen. A friendly warning: don't
+          search her name online — it leads straight to series-wide spoilers.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">DH</div>
+        <div><h3>Dorian Havilliard</h3><div class="role">Crown Prince of Adarlan</div></div></div>
+        <p>The King's elder son and heir to the throne, nineteen years old. Quick-witted, well-read,
+          and far kinder than his father.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">CW</div>
+        <div><h3>Chaol Westfall</h3><div class="role">Captain of the Royal Guard</div></div></div>
+        <p>Dorian's closest friend and the King's twenty-two-year-old Captain of the Guard.
+          Dutiful and disciplined; born in the mountain city of Anielle.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">KA</div>
+        <div><h3>The King of Adarlan</h3><div class="role">The conqueror</div></div></div>
+        <p>The most powerful man in Erilea. Ten years before the story he conquered the eastern
+          kingdoms and banished magic. He is never named — known only by his house, Havilliard.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">NY</div>
+        <div><h3>Nehemia Ytger</h3><div class="role">Princess of Eyllwe</div></div></div>
+        <p>Heir of the conquered kingdom of Eyllwe, sent to Rifthold to learn northern customs.
+          Clever, principled, and fiercely loyal to her people.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">DP</div>
+        <div><h3>Duke Perrington</h3><div class="role">The King's right hand</div></div></div>
+        <p>The King's oldest ally and most trusted advisor, and the Duke of Morath, a city in the
+          south of Adarlan.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">AH</div>
+        <div><h3>Arobynn Hammel</h3><div class="role">King of the Assassins</div></div></div>
+        <p>Not royalty, but a power in Rifthold all the same — master of Erilea's deadliest
+          assassins' guild, and the man who raised Celaena after she was orphaned.</p></div>
+      <div class="tile char"><div class="c-top"><div class="c-av">EG</div>
+        <div><h3>Elena &amp; Gavin</h3><div class="role">A thousand-year legend</div></div></div>
+        <p>Gavin was the first King of Adarlan; Elena, a half-Fae princess of Terrasen, his queen.
+          Their ancient story echoes quietly through the series.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GLOSSARY ===================== -->
+<section class="sec" id="glossary">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Words &amp; names</div>
+      <h2>A quick glossary</h2>
+      <p>The terms that come up early and often, explained without giving anything away.</p>
+    </div>
+    <dl class="gloss">
+      <div class="gterm"><dt>Erilea</dt><dd>The world the story unfolds in — and the name of its main continent.</dd></div>
+      <div class="gterm"><dt>The Fae</dt><dd>An immortal, magical people; the oldest beings in Erilea and its original inhabitants.</dd></div>
+      <div class="gterm"><dt>Wyrd</dt><dd>A god — or the very fabric of fate and the world. Characters often swear &ldquo;by the Wyrd.&rdquo;</dd></div>
+      <div class="gterm"><dt>Wyrdmarks</dt><dd>Runic symbols of an ancient religion, all but forgotten by the time the story begins.</dd></div>
+      <div class="gterm"><dt>Magic's Fall</dt><dd>Roughly ten years before Book One, magic abruptly vanished from Erilea after the King outlawed it.</dd></div>
+      <div class="gterm"><dt>The Glass Castle</dt><dd>The King's castle of glass in Rifthold, raised over the old stone keep beneath it.</dd></div>
+      <div class="gterm"><dt>Endovier</dt><dd>A brutal salt-mine labour camp. Few who are sent there ever leave.</dd></div>
+      <div class="gterm"><dt>Rifthold</dt><dd>The glittering capital of Adarlan, on the Avery River.</dd></div>
+      <div class="gterm"><dt>The King's Champion</dt><dd>The title — and the prize — at the centre of Book One's deadly competition.</dd></div>
+      <div class="gterm"><dt>Havilliard</dt><dd>The royal house of Adarlan. Its crest: a gold wyvern on a red field.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== TRACKER ===================== -->
+<section class="sec" id="tracker">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Stay on track</div>
+      <h2>Your reading tracker</h2>
+      <p>Each friend gets their own profile, saved on their device. Switch readers any time, and
+        share a link to carry your progress to another phone.</p>
+    </div>
+    <div class="tracker">
+
+      <div class="profile-card">
+        <div class="pc-row">
+          <span class="pc-label">Reading as</span>
+          <select class="profile-select" id="profileSelect" aria-label="Choose reader"></select>
+          <div class="pc-actions">
+            <button class="mini-btn" id="pNew">New reader</button>
+            <button class="mini-btn" id="pRename">Rename</button>
+            <button class="mini-btn" id="pDelete">Remove</button>
+          </div>
+        </div>
+        <div class="profile-form" id="profileForm" hidden>
+          <input type="text" id="profileNameInput" placeholder="Reader's name…" maxlength="30">
+          <button class="mini-btn primary" id="pfSave">Save</button>
+          <button class="mini-btn" id="pfCancel">Cancel</button>
+        </div>
+      </div>
+
+      <div class="tk-head">
+        <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+        <div class="tk-stat">
+          <span><b id="doneCount">0</b> of 8 finished</span>
+          <span id="pctText">0%</span>
+        </div>
+      </div>
+      <div id="trackList"></div>
+      <div class="tk-done-msg" id="doneMsg">&#9733; The whole journey, complete. Well read!</div>
+
+      <div class="share-card">
+        <div class="share-top">
+          <div>
+            <h4>Share your progress</h4>
+            <p>Send this link to keep your progress on another device, or to compare with a friend.</p>
+          </div>
+          <button class="mini-btn primary" id="shareBtn">Copy my progress link</button>
+        </div>
+        <input type="text" class="share-link" id="shareLink" readonly hidden>
+        <div class="share-msg" id="shareMsg" hidden></div>
+      </div>
+
+      <div style="text-align:center;margin-top:14px;">
+        <button class="mini-btn" id="trackReset">Reset this reader's books</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACOTAR ===================== -->
+<section class="sec acotar" id="acotar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Also on the shelf</div>
+      <h2>A Court of Thorns and Roses</h2>
+      <p>A different series, a different world — by the same author.</p>
+    </div>
+
+    <div class="ac-note">
+      <h3>Before you dive in</h3>
+      <p>Two of the maps in this guide — Prythian and Velaris — belong to <em>A Court of Thorns and
+        Roses</em> (ACOTAR), not Throne of Glass. It's a separate series by Sarah J. Maas, set in
+        the world of <em>Prythian</em> rather than Erilea. The two stories stand completely on their
+        own — read each in its own order.</p>
+      <p>Fans affectionately call Maas's combined works the &ldquo;Maasverse&rdquo; (Throne of
+        Glass, ACOTAR, and Crescent City), but you never need one series to enjoy another. This
+        section is here simply because the ACOTAR maps came along for the ride.</p>
+    </div>
+
+    <div class="ac-cols">
+      <div class="ac-order">
+        <h3>ACOTAR reading order</h3>
+        <div class="ac-sub">Read strictly in publication order.</div>
+        <div class="ac-bk"><span class="ac-n">1</span><span class="ac-t">A Court of Thorns and Roses</span><span class="ac-y">2015</span></div>
+        <div class="ac-bk"><span class="ac-n">2</span><span class="ac-t">A Court of Mist and Fury</span><span class="ac-y">2016</span></div>
+        <div class="ac-bk"><span class="ac-n">3</span><span class="ac-t">A Court of Wings and Ruin</span><span class="ac-y">2017</span></div>
+        <div class="ac-bk"><span class="ac-n">4</span><span class="ac-t">A Court of Frost and Starlight</span><span class="ac-y">2018</span></div>
+        <div class="ac-bk"><span class="ac-n">5</span><span class="ac-t">A Court of Silver Flames</span><span class="ac-y">2021</span></div>
+        <p class="ac-upcoming">A sixth book is expected in October 2026, and a seventh in 2027.</p>
+        <p style="font-size:14px;color:#aab0c2;margin-top:14px;line-height:1.6;">
+          The series follows Feyre, a young mortal huntress, after she is drawn into the dangerous
+          and beautiful land of the Fae. Prythian is divided into seven Courts — Spring, Summer,
+          Autumn, Winter, Dawn, Day and Night — with the human mortal lands to the south, split off
+          by an ancient wall. The hostile kingdom of Hybern lies on its own island.</p>
+      </div>
+      <div class="ac-maps">
+        <div class="ac-map">
+          <img src="maps/prythian.jpg" alt="Map of Prythian" loading="lazy">
+          <div class="acm-b"><h4>Prythian</h4>
+            <p>The faerie realm and its seven Courts, with the mortal lands beyond the wall.</p></div>
+        </div>
+        <div class="ac-map">
+          <img src="maps/velaris.jpg" alt="The city of Velaris" loading="lazy">
+          <div class="acm-b"><h4>Velaris, the City of Starlight</h4>
+            <p>A luminous city within the Night Court — best discovered through the books themselves.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lb" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="f-title">Happy reading, Audrey</div>
+  <p>A spoiler-free companion to the Throne of Glass series by Sarah J. Maas.<br>
+     Made with love for Audrey &amp; her book club. Maps by their original artists.</p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var store = {
+    get:function(k){try{return localStorage.getItem(k);}catch(e){return null;}},
+    set:function(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  };
+  function $(id){return document.getElementById(id);}
+
+  /* ---------- mobile nav ---------- */
+  var navLinks = $('navLinks');
+  $('navToggle').addEventListener('click',function(){navLinks.classList.toggle('open');});
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){navLinks.classList.remove('open');});
+  });
+
+  /* ---------- reading-order tabs ---------- */
+  document.querySelectorAll('.tab[data-tab]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.tab[data-tab]').forEach(function(b){b.classList.remove('active');});
+      document.querySelectorAll('.panel[data-panel]').forEach(function(p){p.classList.remove('active');});
+      btn.classList.add('active');
+      document.querySelector('.panel[data-panel="'+btn.dataset.tab+'"]').classList.add('active');
+    });
+  });
+
+  /* ---------- map switcher ---------- */
+  var mainMap = $('mainMap'), mainCap = $('mainMapCap');
+  document.querySelectorAll('.tab[data-map]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.tab[data-map]').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      mainMap.src = btn.dataset.map;
+      mainCap.innerHTML = btn.dataset.cap;
+    });
+  });
+
+  /* ---------- lightbox ---------- */
+  var lb = $('lightbox'), lbImg = $('lbImg'), lbCap = $('lbCap');
+  function openLb(src,cap){
+    lbImg.src = src; lbCap.textContent = cap || '';
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeLb(){lb.classList.remove('open'); document.body.style.overflow='';}
+  $('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+  mainMap.addEventListener('click',function(){openLb(mainMap.src,mainCap.textContent);});
+  document.querySelectorAll('.map-card img, .ac-map img').forEach(function(img){
+    img.addEventListener('click',function(){
+      var card = img.closest('.map-card,.ac-map');
+      var h = card.querySelector('h4');
+      openLb(img.src, h ? h.textContent : img.alt);
+    });
+  });
+
+  /* ============ PROFILES ============ */
+  var BOOKS = [
+    ['Throne of Glass','Book One'],['Crown of Midnight','Book Two'],
+    ["The Assassin's Blade",'Prequel'],['Heir of Fire','Book Three'],
+    ['Queen of Shadows','Book Four'],['Empire of Storms','Book Five'],
+    ['Tower of Dawn','Book Six'],['Kingdom of Ash','The finale']
+  ];
+  var TANDEM = [
+    ['eos','Nightfall – Chapter 5'],['tod','Chapter 1'],
+    ['eos','Chapters 6–8'],['tod','Chapters 2–3'],
+    ['eos','Chapters 9–10'],['tod','Chapters 4–6'],
+    ['eos','Chapter 11'],['tod','Chapter 7'],
+    ['eos','Chapters 12–13'],['tod','Chapters 8–10'],
+    ['eos','Chapters 14–16'],['tod','Chapters 11–12'],
+    ['eos','Chapters 17–18'],['tod','Chapters 13–16'],
+    ['eos','Chapter 19'],['tod','Chapter 17'],
+    ['eos','Chapters 20–23'],['tod','Chapters 18–21'],
+    ['eos','Chapters 24–25'],['tod','Chapters 22–23'],
+    ['eos','Chapter 26'],['tod','Chapter 24'],
+    ['eos','Chapters 27–29'],['tod','Chapters 25–28'],
+    ['eos','Chapter 30'],['tod','Chapters 29–31'],
+    ['eos','Chapter 31'],['tod','Chapter 32'],
+    ['eos','Chapter 32'],['tod','Chapters 33–35'],
+    ['eos','Chapters 33–51'],['tod','Chapters 36–37'],
+    ['eos','Chapter 52'],['tod','Chapters 38–40'],
+    ['eos','Chapter 53'],['tod','Chapters 41–42'],
+    ['eos','Chapters 54–56'],['tod','Chapter 43'],
+    ['eos','Chapters 57–59'],['tod','Chapters 44–48'],
+    ['eos','Chapters 60–61'],['tod','Chapters 49–51'],
+    ['eos','Chapters 62–63'],['tod','Chapters 52–53'],
+    ['eos','Chapters 64–65'],['tod','Chapters 54–56'],
+    ['eos','Chapters 66–67'],['tod','Chapter 57'],
+    ['eos','Chapters 68–75'],['tod','Chapter 58 – Fireheart']
+  ];
+
+  var profiles = [], activeId = null;
+  function uid(){return 'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+  function active(){
+    for(var i=0;i<profiles.length;i++){if(profiles[i].id===activeId)return profiles[i];}
+    return profiles[0];
+  }
+  function saveProfiles(){
+    store.set('tog_profiles',JSON.stringify(profiles));
+    store.set('tog_activeId',activeId);
+  }
+  function loadProfiles(){
+    try{profiles = JSON.parse(store.get('tog_profiles')||'[]')||[];}catch(e){profiles=[];}
+    activeId = store.get('tog_activeId');
+    if(!profiles.length){
+      var oldB={},oldT={},oldName=store.get('tog_reader')||'';
+      try{oldB=JSON.parse(store.get('tog_progress')||'{}')||{};}catch(e){}
+      try{oldT=JSON.parse(store.get('tog_tandem')||'{}')||{};}catch(e){}
+      profiles=[{id:uid(),name:oldName||'Reader 1',books:oldB,tandem:oldT}];
+      activeId=profiles[0].id; saveProfiles();
+    }
+    var ok=false;
+    for(var i=0;i<profiles.length;i++){if(profiles[i].id===activeId)ok=true;}
+    if(!ok){activeId=profiles[0].id;}
+  }
+
+  /* build static rows once */
+  var trackList = $('trackList');
+  BOOKS.forEach(function(b,i){
+    var row=document.createElement('div');
+    row.className='tk-row';
+    row.innerHTML='<span class="tk-i">'+(i+1)+'</span>'+
+      '<span class="tk-box">&#10003;</span>'+
+      '<span class="tk-t">'+b[0]+'</span>'+
+      '<span class="tk-tag">'+b[1]+'</span>';
+    row.addEventListener('click',function(){
+      var p=active();
+      p.books[i]=!p.books[i];
+      row.classList.toggle('done',!!p.books[i]);
+      saveProfiles(); updateProgress();
+    });
+    trackList.appendChild(row);
+  });
+  var tandemListEl = $('tandemList');
+  TANDEM.forEach(function(step,i){
+    var book=step[0]==='eos'?'Empire of Storms':'Tower of Dawn';
+    var row=document.createElement('div');
+    row.className='tstep';
+    row.innerHTML='<span class="ts-n">'+(i+1)+'</span>'+
+      '<span class="tbox">&#10003;</span>'+
+      '<span class="tpill '+step[0]+'">'+book+'</span>'+
+      '<span class="ts-label">'+step[1]+'</span>';
+    row.addEventListener('click',function(){
+      var p=active();
+      p.tandem[i]=!p.tandem[i];
+      row.classList.toggle('done',!!p.tandem[i]);
+      saveProfiles(); updateTandemCount();
+    });
+    tandemListEl.appendChild(row);
+  });
+
+  function renderBooks(){
+    var p=active(), rows=trackList.children;
+    for(var i=0;i<rows.length;i++){rows[i].classList.toggle('done',!!p.books[i]);}
+    updateProgress();
+  }
+  function renderTandem(){
+    var p=active(), rows=tandemListEl.children;
+    for(var i=0;i<rows.length;i++){rows[i].classList.toggle('done',!!p.tandem[i]);}
+    updateTandemCount();
+    $('tandemReader').textContent=p.name;
+  }
+  function updateProgress(){
+    var p=active(),n=0;
+    for(var i=0;i<BOOKS.length;i++){if(p.books[i])n++;}
+    var pct=Math.round(n/BOOKS.length*100);
+    $('barFill').style.width=pct+'%';
+    $('doneCount').textContent=n;
+    $('pctText').textContent=pct+'%';
+    $('doneMsg').style.display=(n===BOOKS.length)?'block':'none';
+  }
+  function updateTandemCount(){
+    var p=active(),n=0;
+    for(var i=0;i<TANDEM.length;i++){if(p.tandem[i])n++;}
+    $('tandemCount').textContent=n;
+  }
+  function renderSelect(){
+    var sel=$('profileSelect');
+    sel.innerHTML='';
+    profiles.forEach(function(p){
+      var o=document.createElement('option');
+      o.value=p.id; o.textContent=p.name;
+      if(p.id===activeId)o.selected=true;
+      sel.appendChild(o);
+    });
+  }
+  function renderAll(){renderSelect();renderBooks();renderTandem();}
+
+  loadProfiles();
+  renderAll();
+
+  /* profile select */
+  $('profileSelect').addEventListener('change',function(){
+    activeId=this.value; saveProfiles(); renderBooks(); renderTandem();
+  });
+
+  /* add / rename form */
+  var formMode='new', form=$('profileForm'), nameInput=$('profileNameInput');
+  function showForm(mode){
+    formMode=mode;
+    nameInput.value = (mode==='rename') ? active().name : '';
+    form.hidden=false; nameInput.focus(); nameInput.select();
+  }
+  $('pNew').addEventListener('click',function(){showForm('new');});
+  $('pRename').addEventListener('click',function(){showForm('rename');});
+  $('pfCancel').addEventListener('click',function(){form.hidden=true;});
+  function saveForm(){
+    var v=nameInput.value.trim();
+    if(!v){nameInput.focus();return;}
+    if(formMode==='new'){
+      var p={id:uid(),name:v,books:{},tandem:{}};
+      profiles.push(p); activeId=p.id;
+    }else{
+      active().name=v;
+    }
+    saveProfiles(); renderAll(); form.hidden=true;
+  }
+  $('pfSave').addEventListener('click',saveForm);
+  nameInput.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){e.preventDefault();saveForm();}
+    if(e.key==='Escape'){form.hidden=true;}
+  });
+
+  /* delete */
+  $('pDelete').addEventListener('click',function(){
+    if(profiles.length<=1){
+      alert('You need at least one reader. Rename this one instead, or add another first.');
+      return;
+    }
+    if(!confirm('Remove the reader "'+active().name+'" and their progress?'))return;
+    profiles=profiles.filter(function(p){return p.id!==activeId;});
+    activeId=profiles[0].id;
+    saveProfiles(); renderAll();
+  });
+
+  /* reset books */
+  $('trackReset').addEventListener('click',function(){
+    if(!confirm('Reset book progress for "'+active().name+'"?'))return;
+    active().books={}; saveProfiles(); renderBooks();
+  });
+
+  /* tandem toggle / reset */
+  var tToggle=$('tandemToggle');
+  tToggle.addEventListener('click',function(){
+    tandemListEl.classList.toggle('open');
+    tToggle.textContent=tandemListEl.classList.contains('open')
+      ?'Hide the chapter order':'Show the full chapter order';
+  });
+  $('tandemReset').addEventListener('click',function(){
+    if(!confirm('Reset tandem progress for "'+active().name+'"?'))return;
+    active().tandem={}; saveProfiles(); renderTandem();
+  });
+
+  /* ---------- share progress ---------- */
+  function encodeState(p){
+    var json=JSON.stringify({n:p.name,b:p.books,t:p.tandem});
+    return btoa(unescape(encodeURIComponent(json)));
+  }
+  function decodeState(str){
+    return JSON.parse(decodeURIComponent(escape(atob(str))));
+  }
+  $('shareBtn').addEventListener('click',function(){
+    var link=location.href.split('#')[0]+'#share='+encodeState(active());
+    var box=$('shareLink'), msg=$('shareMsg');
+    box.hidden=false; box.value=link; box.focus(); box.select();
+    msg.hidden=false;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(link).then(function(){
+        msg.textContent='Link copied — paste it anywhere to restore this progress.';
+      },function(){
+        msg.textContent='Select the link above and copy it (Ctrl/Cmd + C).';
+      });
+    }else{
+      msg.textContent='Select the link above and copy it (Ctrl/Cmd + C).';
+    }
+  });
+
+  /* ---------- import from link ---------- */
+  function clearHash(){
+    try{history.replaceState('',document.title,location.pathname+location.search);}
+    catch(e){location.hash='';}
+  }
+  (function checkImport(){
+    var h=location.hash||'';
+    if(h.indexOf('#share=')!==0)return;
+    var data;
+    try{data=decodeState(h.slice(7));}catch(e){return;}
+    if(!data)return;
+    $('importText').textContent='Found shared reading progress for “'+(data.n||'a reader')+'”.';
+    $('importBanner').hidden=false;
+    $('importAdd').addEventListener('click',function(){
+      var p={id:uid(),name:(data.n||'Shared reader'),books:data.b||{},tandem:data.t||{}};
+      profiles.push(p); activeId=p.id; saveProfiles(); renderAll();
+      $('importBanner').hidden=true; clearHash();
+      $('tracker').scrollIntoView({behavior:'smooth'});
+    });
+    $('importDismiss').addEventListener('click',function(){
+      $('importBanner').hidden=true; clearHash();
+    });
+  })();
+
+  /* ---------- scroll-spy ---------- */
+  var links=document.querySelectorAll('.nav-links a'), sections=[];
+  links.forEach(function(a){
+    var s=document.querySelector(a.getAttribute('href'));
+    if(s)sections.push({a:a,s:s});
+  });
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          for(var i=0;i<sections.length;i++){
+            if(sections[i].s===en.target){sections[i].a.classList.add('active');}
+          }
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(o){obs.observe(o.s);});
+  }
+})();
+</script>
+</body>
+</html>
